@@ -45,9 +45,9 @@ public class TicketManagerTest {
     @Test
     public void searchByExistingAirportDifferentOrder() {                     //поиск по названию аэропорта вылета/прилета (Другой порядок)
 
-
-        TicketRepository repo = new TicketRepository();
-        Arrays.sort(Ticket[get]);
+//
+//        TicketRepository repo = new TicketRepository();
+//        Arrays.sort(Ticket[get]);
 //        Ticket[] expected = {ticket2, ticket3, ticket6};
 //        Ticket[] actual = manager.searchBy("ALA");
 //        Assertions.assertArrayEquals(expected, actual);

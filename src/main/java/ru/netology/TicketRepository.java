@@ -1,7 +1,7 @@
 package ru.netology;
 
 public class TicketRepository {
-    private Ticket[] tickets = new  Ticket[0];
+    private Ticket[] tickets = new Ticket[0];
 
     public void save(Ticket ticket) {                      //метод добавления билетов
         ///

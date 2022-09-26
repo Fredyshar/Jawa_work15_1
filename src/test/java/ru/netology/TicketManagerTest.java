@@ -35,6 +35,7 @@ public class TicketManagerTest {
         Ticket[] actual = manager.searchBy("LED");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void searchByNonExistingAirport() {                     //поиск по названию не существующего аэропорта
 
@@ -42,14 +43,23 @@ public class TicketManagerTest {
         Ticket[] actual = manager.searchBy("AMF");
         Assertions.assertArrayEquals(expected, actual);
     }
-    @Test
-    public void searchByExistingAirportDifferentOrder() {                     //поиск по названию аэропорта вылета/прилета (Другой порядок)
 
-//
-//        TicketRepository repo = new TicketRepository();
-//        Arrays.sort(Ticket[get]);
-//        Ticket[] expected = {ticket2, ticket3, ticket6};
-//        Ticket[] actual = manager.searchBy("ALA");
-//        Assertions.assertArrayEquals(expected, actual);
+    @Test
+    public void sortTickets() {                     //сортировка билетов
+        Ticket[] tickets = {ticket1, ticket2, ticket3, ticket4, ticket5};
+        System.out.println(Arrays.toString(tickets));
+        Arrays.sort(tickets);
+        System.out.println(Arrays.toString(tickets));
     }
+
+    @Test
+    public void searchByExistingAirportDifferentOrder() {       //поиск по аэропорту вылета и прилета с сортировкой
+
+//        Ticket[] expected = {ticket1, ticket3, ticket4};
+        Ticket[] expected = {ticket4, ticket1, ticket3};
+        Ticket[] actual = manager.searchByToAndFrom("LED", "LED");
+        Arrays.sort(actual);
+    }
+
 }
+

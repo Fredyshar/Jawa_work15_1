@@ -1,7 +1,7 @@
 package ru.netology;
 
 
-public class Ticket implements Comparable<Ticket>{
+public class Ticket implements Comparable<Ticket> {
     public int getId() {
         return id;
     }
